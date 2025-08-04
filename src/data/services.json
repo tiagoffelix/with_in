@@ -1,0 +1,29 @@
+[
+  {
+    "id": "individual-therapy",
+    "name": "Terapia Individual",
+    "description": "A terapia individual é um espaço seguro e confidencial onde podes explorar os teus pensamentos, emoções e comportamentos. Através de uma relação terapêutica de confiança, trabalhamos juntos para compreender as dificuldades que enfrentas e desenvolver estratégias eficazes para as superar. Este processo permite-te conhecer-te melhor, desenvolver competências de autorregulação emocional e promover mudanças positivas na tua vida.",
+    "icon": "individual",
+    "duration": "50 minutos",
+    "targetAudience": ["Adultos", "Adolescentes"],
+    "order": 1
+  },
+  {
+    "id": "couple-therapy",
+    "name": "Terapia de Casal",
+    "description": "A terapia de casal oferece um espaço neutro e acolhedor para casais que desejam melhorar a sua relação. Trabalhamos questões como comunicação, conflitos, intimidade e confiança. O objetivo é fortalecer a ligação entre os parceiros, desenvolver competências de comunicação eficaz e criar estratégias para resolver conflitos de forma construtiva. Cada casal é único, e a nossa abordagem é personalizada às vossas necessidades específicas.",
+    "icon": "couple",
+    "duration": "60 minutos",
+    "targetAudience": ["Casais", "Parceiros"],
+    "order": 2
+  },
+  {
+    "id": "family-therapy",
+    "name": "Terapia Familiar",
+    "description": "A terapia familiar envolve todos os membros da família num processo de mudança e crescimento conjunto. Focamo-nos na melhoria da comunicação familiar, na resolução de conflitos e no fortalecimento dos laços afetivos. Esta modalidade é particularmente eficaz para lidar com questões como problemas comportamentais em crianças e adolescentes, dificuldades de adaptação a mudanças familiares, e conflitos entre gerações. Trabalhamos para criar um ambiente familiar mais harmonioso e funcional.",
+    "icon": "family",
+    "duration": "60 minutos",
+    "targetAudience": ["Famílias", "Pais e filhos", "Irmãos"],
+    "order": 3
+  }
+]

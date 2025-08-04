@@ -1,0 +1,187 @@
+[
+  {
+    "id": "joana-barbosa",
+    "name": "Joana Barbosa",
+    "title": "Psicóloga Clínica | Fundadora",
+    "photo": "assets/joana-barbosa.jpg",
+    "summary": "Fundadora da With.in, especialista em terapia individual e de casal com mais de 10 anos de experiência.",
+    "biography": "Joana Barbosa é a fundadora da With.in - Psicologia Clínica, uma profissional dedicada ao bem-estar emocional e mental dos seus clientes. Com uma abordagem humanística e integrativa, Joana acredita que cada pessoa possui dentro de si os recursos necessários para o crescimento e a mudança positiva. A sua prática clínica é baseada na criação de um espaço seguro e acolhedor, onde os clientes podem explorar as suas emoções, pensamentos e comportamentos de forma livre e sem julgamento.",
+    "specializations": [
+      "Terapia Individual",
+      "Terapia de Casal",
+      "Ansiedade e Depressão",
+      "Trauma e PTSD",
+      "Desenvolvimento Pessoal"
+    ],
+    "education": [
+      "Mestrado em Psicologia Clínica - Universidade de Lisboa",
+      "Licenciatura em Psicologia - Universidade do Porto",
+      "Formação em Terapia Cognitivo-Comportamental",
+      "Certificação em EMDR (Eye Movement Desensitization and Reprocessing)"
+    ],
+    "experience": [
+      "10+ anos de experiência em psicologia clínica",
+      "Fundadora e Diretora Clínica da With.in",
+      "Ex-psicóloga no Hospital de Santa Maria",
+      "Supervisora clínica de psicólogos júniores",
+      "Palestrante em conferências de saúde mental"
+    ],
+    "approaches": [
+      "Abordagem Humanística",
+      "Terapia Cognitivo-Comportamental",
+      "Terapia Integrativa",
+      "EMDR",
+      "Mindfulness"
+    ],
+    "isFounder": true,
+    "order": 1
+  },
+  {
+    "id": "catarina-horta",
+    "name": "Catarina Horta",
+    "title": "Psicóloga Clínica",
+    "photo": "assets/catarina-horta.jpg",
+    "summary": "Especialista em psicologia infantil e adolescente, com foco em dificuldades de aprendizagem e desenvolvimento.",
+    "biography": "Catarina Horta é uma psicóloga clínica especializada no acompanhamento de crianças e adolescentes. Com uma paixão genuína pelo desenvolvimento humano nas suas fases mais formativas, Catarina utiliza uma abordagem lúdica e adaptada à idade de cada cliente. A sua experiência inclui o trabalho com dificuldades de aprendizagem, problemas comportamentais, ansiedade infantil e questões relacionadas com o desenvolvimento emocional e social.",
+    "specializations": [
+      "Psicologia Infantil",
+      "Psicologia do Adolescente",
+      "Dificuldades de Aprendizagem",
+      "Perturbações do Comportamento",
+      "Avaliação Psicológica"
+    ],
+    "education": [
+      "Mestrado em Psicologia Clínica e da Saúde - Universidade de Coimbra",
+      "Licenciatura em Psicologia - Universidade de Aveiro",
+      "Pós-graduação em Psicologia Educacional",
+      "Formação em Terapia Lúdica"
+    ],
+    "experience": [
+      "8 anos de experiência em psicologia clínica",
+      "Psicóloga na With.in desde 2020",
+      "Ex-psicóloga escolar em várias instituições",
+      "Colaboração com centros de desenvolvimento infantil",
+      "Formadora em workshops para pais e educadores"
+    ],
+    "approaches": [
+      "Terapia Lúdica",
+      "Abordagem Sistémica",
+      "Terapia Cognitivo-Comportamental adaptada",
+      "Intervenção Psicoeducativa",
+      "Terapia Familiar"
+    ],
+    "isFounder": false,
+    "order": 2
+  },
+  {
+    "id": "rita-cunha",
+    "name": "Rita Cunha",
+    "title": "Psicóloga Clínica",
+    "photo": "assets/rita-cunha.jpg",
+    "summary": "Especializada em terapia de grupo e intervenção em crises, com experiência em contextos hospitalares.",
+    "biography": "Rita Cunha é uma psicóloga clínica com vasta experiência em contextos hospitalares e de emergência. A sua especialização em intervenção em crises e terapia de grupo permite-lhe oferecer um apoio especializado a pessoas que atravessam momentos particularmente difíceis das suas vidas. Rita acredita no poder terapêutico do grupo e na importância da partilha de experiências como ferramenta de cura e crescimento pessoal.",
+    "specializations": [
+      "Terapia de Grupo",
+      "Intervenção em Crises",
+      "Luto e Perda",
+      "Stress Pós-Traumático",
+      "Saúde Mental Comunitária"
+    ],
+    "education": [
+      "Mestrado em Psicologia Clínica - Universidade Nova de Lisboa",
+      "Licenciatura em Psicologia - Universidade Católica Portuguesa",
+      "Especialização em Intervenção em Crises",
+      "Formação em Terapia de Grupo Psicodinâmica"
+    ],
+    "experience": [
+      "7 anos de experiência em psicologia clínica",
+      "Psicóloga na With.in desde 2021",
+      "Ex-psicóloga no Serviço de Urgência Psiquiátrica",
+      "Coordenadora de grupos terapêuticos",
+      "Voluntária em organizações de apoio à vítima"
+    ],
+    "approaches": [
+      "Terapia de Grupo",
+      "Abordagem Psicodinâmica",
+      "Intervenção em Crise",
+      "Terapia Breve",
+      "Técnicas de Estabilização"
+    ],
+    "isFounder": false,
+    "order": 3
+  },
+  {
+    "id": "maria-dias",
+    "name": "Maria Dias",
+    "title": "Psicóloga Clínica",
+    "photo": "assets/maria-dias.jpg",
+    "summary": "Especialista em neuropsicologia e reabilitação cognitiva, com foco em adultos e idosos.",
+    "biography": "Maria Dias é uma psicóloga clínica especializada em neuropsicologia e reabilitação cognitiva. Com um interesse particular no envelhecimento saudável e nas perturbações neurocognitivas, Maria oferece avaliações neuropsicológicas detalhadas e programas de reabilitação personalizados. A sua abordagem combina rigor científico com uma atenção especial às necessidades emocionais dos seus clientes e famílias.",
+    "specializations": [
+      "Neuropsicologia",
+      "Reabilitação Cognitiva",
+      "Demências",
+      "Traumatismo Cranioencefálico",
+      "Avaliação Neuropsicológica"
+    ],
+    "education": [
+      "Mestrado em Neuropsicologia - Universidade de Lisboa",
+      "Licenciatura em Psicologia - Universidade do Minho",
+      "Pós-graduação em Gerontologia",
+      "Formação em Estimulação Cognitiva"
+    ],
+    "experience": [
+      "9 anos de experiência em neuropsicologia",
+      "Psicóloga na With.in desde 2019",
+      "Ex-neuropsicóloga em centro de reabilitação",
+      "Investigadora em projetos de envelhecimento",
+      "Consultora em lares de idosos"
+    ],
+    "approaches": [
+      "Avaliação Neuropsicológica",
+      "Reabilitação Cognitiva",
+      "Estimulação Cognitiva",
+      "Psicoeducação Familiar",
+      "Intervenção Multimodal"
+    ],
+    "isFounder": false,
+    "order": 4
+  },
+  {
+    "id": "sandra-fontes",
+    "name": "Sandra Fontes",
+    "title": "Psicóloga Clínica",
+    "photo": "assets/sandra-fontes.jpg",
+    "summary": "Especializada em psicologia da saúde e medicina comportamental, com foco em doenças crónicas.",
+    "biography": "Sandra Fontes é uma psicóloga clínica especializada em psicologia da saúde e medicina comportamental. O seu trabalho centra-se no apoio a pessoas com doenças crónicas, ajudando-as a adaptar-se às mudanças na sua vida e a desenvolver estratégias de coping eficazes. Sandra acredita na importância da abordagem holística da saúde, considerando os aspectos psicológicos, sociais e físicos do bem-estar.",
+    "specializations": [
+      "Psicologia da Saúde",
+      "Medicina Comportamental",
+      "Doenças Crónicas",
+      "Dor Crónica",
+      "Adesão Terapêutica"
+    ],
+    "education": [
+      "Mestrado em Psicologia da Saúde - Universidade do Porto",
+      "Licenciatura em Psicologia - Universidade de Coimbra",
+      "Pós-graduação em Medicina Comportamental",
+      "Formação em Hipnose Clínica"
+    ],
+    "experience": [
+      "6 anos de experiência em psicologia da saúde",
+      "Psicóloga na With.in desde 2022",
+      "Ex-psicóloga em hospital oncológico",
+      "Colaboração com equipas multidisciplinares",
+      "Investigação em qualidade de vida"
+    ],
+    "approaches": [
+      "Medicina Comportamental",
+      "Terapia de Aceitação e Compromisso",
+      "Hipnose Clínica",
+      "Mindfulness",
+      "Intervenção Psicoeducativa"
+    ],
+    "isFounder": false,
+    "order": 5
+  }
+]

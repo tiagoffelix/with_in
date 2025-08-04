@@ -22,7 +22,9 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "resolveJsonModule": true,
+    "baseUrl": "./src" // Set base URL for module resolution
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
