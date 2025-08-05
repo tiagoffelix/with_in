@@ -21,7 +21,11 @@
         />
         
         <div class="service-content">
-          <h3 class="service-name">{{ service.name }}</h3>
+          <img
+            class="service-title-img"
+            [src]="'/assets/' + service.icon + '.png'"
+            [alt]="service.name"
+          />
           
           <!-- Toggle details -->
           <button class="btn btn-secondary" (click)="toggleService(service)">

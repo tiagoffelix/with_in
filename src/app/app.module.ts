@@ -1,10 +1,33 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { HeroComponent } from '../components/hero/hero.component';
+import { TeamComponent } from '../components/team/team.component';
+import { ServicesComponent } from '../components/services/services.component';
+import { TestemunhosComponent } from '../components/testemunhos/testemunhos.component';
+import { ContactComponent } from '../components/contact/contact.component';
+import { FooterComponent } from '../components/footer/footer.component';
+
 
 @NgModule({
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    HeaderComponent,
+    HeroComponent,
+    TeamComponent,
+    ServicesComponent,
+    TestemunhosComponent,
+    ContactComponent,
+    FooterComponent
   ],
-  providers: []
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add support for custom elements
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

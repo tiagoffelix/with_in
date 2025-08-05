@@ -41,6 +41,7 @@
   border: 1px solid rgba(139, 115, 85, 0.1);
   text-align: center;
   height: fit-content;
+  overflow: hidden;
 }
 
 .service-card:hover {
@@ -53,10 +54,17 @@
   max-width: 300px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  background-color: var(--color-white);
   border-radius: var(--radius-full);
   margin: 0 auto var(--spacing-lg);
   transition: transform var(--transition-normal);
 }
+
+.service-title-img {
+  width: 100%;
+  height: auto;
+}
+
 .service-card:hover .service-img {
   transform: scale(1.05);
 }
