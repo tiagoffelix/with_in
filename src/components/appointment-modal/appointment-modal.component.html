@@ -1,0 +1,59 @@
+<div class="modal-overlay" *ngIf="visible">
+  <div class="modal">
+    <button class="close-btn" (click)="close()">×</button>
+    <h2>Agendar Sessão</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input id="name" formControlName="name" type="text" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="sessionType">Tipo de Sessão</label>
+        <select id="sessionType" formControlName="sessionType" required>
+          <option value="individual">Terapia Individual</option>
+          <option value="couple">Terapia de Casal</option>
+          <option value="family">Terapia Familiar</option>
+          <option value="group">Terapia de Grupo</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="timePreference">Preferência de Horário</label>
+        <select id="timePreference" formControlName="timePreference" required>
+          <option value="morning">Manhã (9h-12h)</option>
+          <option value="afternoon">Tarde (14h-17h)</option>
+          <option value="evening">Final do dia (17h-20h)</option>
+          <option value="flexible">Flexível</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Telefone (opcional)</label>
+        <input id="phone" formControlName="phone" type="tel" />
+      </div>
+
+      <div class="form-group terms">
+        <input id="terms" formControlName="acceptsTerms" type="checkbox" />
+        <label for="terms">Aceito os termos e condições</label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="loading">Enviar</button>
+      </div>
+    </form>
+
+    <div class="message success" *ngIf="successMessage">
+      {{ successMessage }}
+    </div>
+    <div class="message error" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

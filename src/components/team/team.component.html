@@ -1,0 +1,114 @@
+<section id="team" class="team section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">A Nossa Equipa</h2>
+      <p class="section-subtitle">
+        Profissionais dedicadas ao teu bem-estar emocional e mental
+      </p>
+    </div>
+
+    <div class="team-scroll" *ngIf="psychologists$ | async as psychologists">
+      <div class="team-grid">
+        <div class="team-card" *ngFor="let psychologist of psychologists; trackBy: trackByPsychologist" [class.expanded]="expandedCard === psychologist.id">
+          <div class="card-header" (click)="toggleCard(psychologist.id)" [attr.aria-expanded]="expandedCard === psychologist.id">
+            <div class="psychologist-photo">
+              <img 
+                [src]="psychologist.photo" 
+                [alt]="'Foto de ' + psychologist.name"
+                loading="lazy"
+                (error)="onImageError($event)"
+              />
+              <div class="photo-overlay" *ngIf="psychologist.isFounder">
+                <span class="founder-badge">Fundadora</span>
+              </div>
+            </div>
+            
+            <div class="psychologist-info">
+              <h3 class="psychologist-name">{{ psychologist.name }}</h3>
+              <p class="psychologist-title">{{ psychologist.title }}</p>
+              <p class="psychologist-summary">{{ psychologist.summary }}</p>
+              
+              <div class="specializations-preview">
+                <span 
+                  class="specialization-tag"
+                  *ngFor="let spec of psychologist.specializations.slice(0, 3)"
+                >
+                  {{ spec }}
+                </span>
+                <span 
+                  class="more-specializations"
+                  *ngIf="psychologist.specializations.length > 3"
+                >
+                  +{{ psychologist.specializations.length - 3 }}
+                </span>
+              </div>
+            </div>
+            
+            <div class="expand-icon">
+              <svg 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2"
+                [style.transform]="expandedCard === psychologist.id ? 'rotate(180deg)' : 'none'"
+                style="transition: transform 0.3s;"
+              >
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="card-content" [class.expanded]="expandedCard === psychologist.id">
+            <div class="content-inner" *ngIf="expandedCard === psychologist.id">
+              <div class="biography-section">
+                <h4>Sobre</h4>
+                <p>{{ psychologist.biography }}</p>
+              </div>
+
+              <div class="details-grid">
+                <div class="detail-section">
+                  <h4>Especializações</h4>
+                  <ul>
+                    <li *ngFor="let spec of psychologist.specializations">{{ spec }}</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h4>Formação</h4>
+                  <ul>
+                    <li *ngFor="let edu of psychologist.education">{{ edu }}</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h4>Experiência</h4>
+                  <ul>
+                    <li *ngFor="let exp of psychologist.experience">{{ exp }}</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h4>Abordagens</h4>
+                  <ul>
+                    <li *ngFor="let approach of psychologist.approaches">{{ approach }}</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <button 
+                  class="btn btn-primary"
+                  (click)="scheduleWithPsychologist(psychologist.name)"
+                >
+                  Agendar com {{ psychologist.name.split(' ')[0] }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

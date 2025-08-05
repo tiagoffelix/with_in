@@ -1,0 +1,51 @@
+<section id="services" class="services section">
+  <!-- Full-width banner image -->
+  <img src="/assets/Frase.PNG" alt="Nossos Serviços" class="services-banner" />
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Os Nossos Serviços</h2>
+      <p class="section-subtitle">
+        Oferecemos diferentes modalidades terapêuticas adaptadas às tuas necessidades
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div 
+        class="service-card"
+        *ngFor="let service of services; trackBy: trackByService"
+      >
+        <img
+          class="service-img"
+          [src]="'/assets/services/' + service.id + '.jpg'"
+          [alt]="service.name"
+        />
+        
+        <div class="service-content">
+          <h3 class="service-name">{{ service.name }}</h3>
+          
+          <!-- Toggle details -->
+          <button class="btn btn-secondary" (click)="toggleService(service)">
+            {{ expandedMap[service.id] ? 'Saber menos' : 'Saber mais' }}
+          </button>
+          
+          <!-- Expanded content -->
+          <div *ngIf="expandedMap[service.id]" class="expanded-content">
+            <ul class="service-features">
+              <li *ngFor="let feature of service.features">{{ feature }}</li>
+            </ul>
+            <p class="service-description">{{ service.description }}</p>
+            
+            <div class="service-actions">
+              <button 
+                class="btn btn-primary"
+                (click)="scheduleService(service.name)"
+              >
+                Marca a tua sessão
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

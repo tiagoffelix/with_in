@@ -19,7 +19,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #2D2D2D;
-  background-color: #F5F2E8;
+  background-color: var(--color-primary-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,15 +27,15 @@ body {
 /* Design System Variables */
 :root {
   /* Colors */
-  --color-primary-bg: #DCEFF4; /* Light aqua background */
+  --color-primary-bg: #EAB68E; /* Light peach background */
   --color-neutral-dark: #9CA694; /* Sage gray */
   --color-neutral-medium: #7EBEB8; /* Muted teal */
   --color-neutral-light: #EAB68E; /* Light peach */
   --color-white: #FFFFFF;
   --color-text-primary: #2D2D2D; /* Keep dark for readability */
   --color-text-secondary: #5A5A5A;
-  --color-accent: #FF7A00; /* Bright orange */
-  --color-accent-hover: #F3834B; /* Salmon orange hover */
+  --color-accent: #F3834B; /* Salmon orange accent */
+  --color-accent-hover: #9CA694; /* Sage gray hover */
   --color-success: #10B981;
   --color-error: #EF4444;
   --color-warning: #F59E0B;

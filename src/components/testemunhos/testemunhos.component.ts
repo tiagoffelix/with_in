@@ -11,77 +11,8 @@ interface Testimonial {
   selector: 'app-testemunhos',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <section id="testemunhos" class="testemunhos section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">TESTEMUNHOS</h2>
-          <p class="section-subtitle">O que dizem os nossos pacientes</p>
-        </div>
-        <div class="testemunhos-grid">
-          <div class="testimonial-card" *ngFor="let t of testimonials">
-            <p class="testimonial-quote">"{{ t.quote }}"</p>
-            <p class="testimonial-author">— {{ t.author }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  `,
-  styles: [`
-    .testemunhos {
-      background: var(--color-primary-bg);
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: var(--spacing-xxl);
-    }
-    .section-title {
-      font-family: 'Tenor Sans', cursive;
-      font-size: var(--font-size-4xl);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-text-primary);
-      margin-bottom: var(--spacing-md);
-    }
-    .section-subtitle {
-      font-size: var(--font-size-lg);
-      color: var(--color-text-secondary);
-      margin-bottom: var(--spacing-xl);
-    }
-    .testemunhos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--spacing-lg);
-    }
-    .testimonial-card {
-      background: var(--color-white);
-      padding: var(--spacing-lg);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
-      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    }
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-    .testimonial-quote {
-      font-size: var(--font-size-base);
-      color: var(--color-text-secondary);
-      font-style: italic;
-      margin-bottom: var(--spacing-sm);
-      line-height: var(--line-height-relaxed);
-    }
-    .testimonial-author {
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-text-primary);
-      text-align: right;
-    }
-    @media (max-width: 768px) {
-      .testemunhos-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  `]
+  templateUrl: './testemunhos.component.html',
+  styleUrls: ['./testemunhos.component.scss']
 })
 export class TestemunhosComponent implements OnInit {
   testimonials: Testimonial[] = [

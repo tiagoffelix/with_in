@@ -1,0 +1,14 @@
+<section id="testemunhos" class="testemunhos section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">TESTIMONIALS</h2>
+      <p class="section-subtitle">What our patients say</p>
+    </div>
+    <div class="testemunhos-grid">
+      <div class="testimonial-card" *ngFor="let t of testimonials">
+        <p class="testimonial-quote">"{{ t.quote }}"</p>
+        <p class="testimonial-author">— {{ t.author }}</p>
+      </div>
+    </div>
+  </div>
+</section>
