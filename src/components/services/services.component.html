@@ -30,9 +30,6 @@
           
           <!-- Expanded content -->
           <div *ngIf="expandedMap[service.id]" class="expanded-content">
-            <ul class="service-features">
-              <li *ngFor="let feature of service.features">{{ feature }}</li>
-            </ul>
             <p class="service-description">{{ service.description }}</p>
             
             <div class="service-actions">

@@ -91,19 +91,13 @@
 }
 
 .service-features li {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-xs);
-  padding-left: var(--spacing-md);
-  position: relative;
+  padding-left: 0;
+  position: static;
 }
 
 .service-features li::before {
-  content: '-';
-  color: var(--color-accent);
-  font-weight: var(--font-weight-semibold);
-  position: absolute;
-  left: 0;
+  display: none;
+  content: none;
 }
 
 .service-actions {
