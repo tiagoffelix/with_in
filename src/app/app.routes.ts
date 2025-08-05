@@ -5,5 +5,6 @@ export const routes: Routes = [
   { path: 'team', loadComponent: () => import('../components/team/team.component').then(m => m.TeamComponent) },
   { path: 'services', loadComponent: () => import('../components/services/services.component').then(m => m.ServicesComponent) },
   { path: 'contact', loadComponent: () => import('../components/contact/contact.component').then(m => m.ContactComponent) },
+  { path: 'testemunhos', loadComponent: () => import('../components/testemunhos/testemunhos.component').then(m => m.TestemunhosComponent) },
   { path: '**', redirectTo: '' }
 ];

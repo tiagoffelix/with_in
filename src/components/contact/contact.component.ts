@@ -86,10 +86,7 @@ import { CommonModule } from '@angular/common';
           <div class="contact-cta">
             <div class="cta-card">
               <h3>Pronto para começar?</h3>
-              <p>
-                Dar o primeiro passo pode ser desafiante, mas estamos aqui para te acompanhar 
-                nesta jornada. Agenda a tua primeira sessão e descobre como podemos ajudar-te.
-              </p>
+              <p>O primeiro passo pode mudar tudo. Marca a tua primeira sessão e inicia o teu caminho de mudança.</p>
               <a 
                 class="btn btn-primary btn-large"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfqfPM11n8QKqNMOpQKo6vEduwQ7Fna5utR1mo69PbtDKUZMQ/viewform?sessionType=individual"
@@ -377,7 +374,6 @@ import { CommonModule } from '@angular/common';
   `]
 })
 export class ContactComponent {
-
   /**
    * Abre o modal de agendamento
    */

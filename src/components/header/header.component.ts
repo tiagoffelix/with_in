@@ -112,7 +112,7 @@ import { ScrollService } from 'shared/scroll.service';
     }
 
     .logo-text {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Tenor Sans', cursive;
       font-size: var(--font-size-2xl);
       font-weight: var(--font-weight-semibold);
       color: var(--color-accent);

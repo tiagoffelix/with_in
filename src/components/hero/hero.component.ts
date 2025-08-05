@@ -24,43 +24,18 @@ import { ScrollService } from '../../shared/scroll.service';
             </h1>
             
             <div class="hero-description">
-              <p>
-                Na With.in acreditamos que cada pessoa carrega consigo uma narrativa única, 
-                repleta de experiências, emoções e sonhos que moldam quem somos. 
-                O nosso espaço foi criado para acolher essas histórias com o cuidado e 
-                a atenção que merecem.
-              </p>
-              
-              <p>
-                Aqui, não procuramos apenas tratar sintomas ou resolver problemas pontuais. 
-                Procuramos compreender a pessoa na sua totalidade, honrando o seu percurso 
-                e criando um ambiente seguro onde possa explorar, crescer e descobrir 
-                novas possibilidades para a sua vida.
-              </p>
-              
-              <p>
-                A nossa abordagem é humanizada e personalizada, porque sabemos que não 
-                existem duas pessoas iguais, nem duas histórias idênticas. 
-                Cada sessão é um encontro genuíno, onde a empatia e o respeito são 
-                os pilares fundamentais do nosso trabalho.
-              </p>
-              
-              <p>
-                Se sentes que é tempo de cuidar da tua história, de dar voz às tuas 
-                emoções e de encontrar novos caminhos para o teu bem-estar, 
-                estamos aqui para te acompanhar nessa jornada.
-              </p>
+              <p><strong>Cuidar da mente devia ser simples e próximo.</strong></p>
+              <p>Mas sabemos — pela nossa própria experiência como psicólogas — que muitas vezes quem mais precisa de ajuda sente-se sozinho e distante.</p>
+              <p>Foi por isso que nasceu o With.in — um projeto que nasce de mim, <strong>Joana Barbosa</strong>, e da minha equipa de profissionais, todos unidos por um propósito comum: <strong>tornar o cuidado emocional mais humano e presente</strong>, independentemente do lugar onde estás.</p>
+              <p>Somos psicólogas, terapeutas e, antes de qualquer título, <strong>pessoas</strong>. Pessoas com histórias, experiências e cicatrizes.</p>
+              <p>Sabemos o que significa perder o equilíbrio interior. E sabemos, também, o poder de o reencontrar.</p>
+              <p>Acreditamos que cuidar da mente vai muito além de tratar sintomas. <strong>É escutar silêncios, acolher fragilidades e encontrar caminhos.</strong></p>
+              <p>Cada pessoa que chega até nós traz consigo um mundo inteiro.</p>
+              <p>E é na relação terapêutica — no encontro genuíno de <strong>confiança, escuta e empatia</strong> — que começa o verdadeiro processo de cura e autoconhecimento.</p>
+              <p>É através dessa conexão que ajudamos cada pessoa a <strong>olhar para dentro</strong>, descobrir as suas forças e compreender as suas fragilidades — para que possa <strong>construir um caminho autêntico de crescimento</strong>.</p>
             </div>
             
             <div class="hero-actions">
-              <button 
-                class="btn btn-primary btn-large"
-                (click)="openAppointmentModal()"
-                [attr.aria-label]="'Agendar primeira sessão'"
-              >
-                Marca a tua primeira sessão
-              </button>
-              
               <button 
                 class="btn btn-secondary btn-large"
                 (click)="scrollService.scrollToSection('team', $event)"
@@ -136,7 +111,7 @@ import { ScrollService } from '../../shared/scroll.service';
     }
 
     .hero-headline {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Tenor Sans', cursive;
       font-size: var(--font-size-5xl);
       font-weight: var(--font-weight-semibold);
       line-height: var(--line-height-tight);

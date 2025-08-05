@@ -1,5 +1,7 @@
 /* Global Styles - With.in Psychology Clinic */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
 /* CSS Reset and Base Styles */
 * {
@@ -13,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: #2D2D2D;
@@ -25,15 +27,15 @@ body {
 /* Design System Variables */
 :root {
   /* Colors */
-  --color-primary-bg: #F5F2E8;
-  --color-neutral-dark: #8B7355;
-  --color-neutral-medium: #A0937D;
-  --color-neutral-light: #D4C4A8;
+  --color-primary-bg: #DCEFF4; /* Light aqua background */
+  --color-neutral-dark: #9CA694; /* Sage gray */
+  --color-neutral-medium: #7EBEB8; /* Muted teal */
+  --color-neutral-light: #EAB68E; /* Light peach */
   --color-white: #FFFFFF;
-  --color-text-primary: #2D2D2D;
+  --color-text-primary: #2D2D2D; /* Keep dark for readability */
   --color-text-secondary: #5A5A5A;
-  --color-accent: #8B7355;
-  --color-accent-hover: #6B5A42;
+  --color-accent: #FF7A00; /* Bright orange */
+  --color-accent-hover: #F3834B; /* Salmon orange hover */
   --color-success: #10B981;
   --color-error: #EF4444;
   --color-warning: #F59E0B;
@@ -96,6 +98,13 @@ body {
 .text-4xl { font-size: var(--font-size-4xl); }
 .text-5xl { font-size: var(--font-size-5xl); }
 
+.section-title, .hero-headline {
+  font-family: 'Tenor Sans', cursive;
+}
+/* Apply Tenor Sans to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Tenor Sans', cursive;
+}
 .font-normal { font-weight: var(--font-weight-normal); }
 .font-medium { font-weight: var(--font-weight-medium); }
 .font-semibold { font-weight: var(--font-weight-semibold); }

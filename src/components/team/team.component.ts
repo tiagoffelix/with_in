@@ -22,13 +22,10 @@ import { PsychologistService } from '../../services/psychologist.service';
           </p>
         </div>
 
-        <div class="team-grid" *ngIf="psychologists$ | async as psychologists">
-          <div 
-            class="team-card"
-            *ngFor="let psychologist of psychologists; trackBy: trackByPsychologist"
-            [class.expanded]="expandedCard === psychologist.id"
-          >
-            <div class="card-header" (click)="toggleCard(psychologist.id)">
+        <div class="team-scroll" *ngIf="psychologists$ | async as psychologists">
+          <div class="team-grid">
+            <div class="team-card" *ngFor="let psychologist of psychologists; trackBy: trackByPsychologist" [class.expanded]="expandedCard === psychologist.id">
+              <div class="card-header" (click)="toggleCard(psychologist.id)" [attr.aria-expanded]="expandedCard === psychologist.id">
               <div class="psychologist-photo">
                 <img 
                   [src]="psychologist.photo" 
@@ -70,6 +67,8 @@ import { PsychologistService } from '../../services/psychologist.service';
                   fill="none" 
                   stroke="currentColor" 
                   stroke-width="2"
+                [style.transform]="expandedCard === psychologist.id ? 'rotate(180deg)' : 'none'"
+                  style="transition: transform 0.3s;"
                 >
                   <polyline points="6,9 12,15 18,9"></polyline>
                 </svg>
@@ -77,7 +76,7 @@ import { PsychologistService } from '../../services/psychologist.service';
             </div>
 
             <div class="card-content" [class.expanded]="expandedCard === psychologist.id">
-              <div class="content-inner">
+              <div class="content-inner" *ngIf="expandedCard === psychologist.id">
                 <div class="biography-section">
                   <h4>Sobre</h4>
                   <p>{{ psychologist.biography }}</p>
@@ -123,6 +122,7 @@ import { PsychologistService } from '../../services/psychologist.service';
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,6 +130,7 @@ import { PsychologistService } from '../../services/psychologist.service';
   `,
   styles: [`
     .team {
+      font-family: 'DM Sans', sans-serif;
       background-color: var(--color-white);
     }
 
@@ -139,7 +140,7 @@ import { PsychologistService } from '../../services/psychologist.service';
     }
 
     .section-title {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Tenor Sans', cursive;
       font-size: var(--font-size-4xl);
       font-weight: var(--font-weight-semibold);
       color: var(--color-text-primary);
@@ -154,15 +155,22 @@ import { PsychologistService } from '../../services/psychologist.service';
       line-height: var(--line-height-relaxed);
     }
 
+    .team-scroll {
+      overflow: visible;
+    }
+
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: 1fr;
       gap: var(--spacing-lg);
-      max-width: 1200px;
-      margin: 0 auto;
+    }
+    .team-card {
+      width: 100%;
     }
 
     .team-card {
+      display: flex;
+      flex-direction: column;
       background: var(--color-white);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-md);
@@ -281,18 +289,25 @@ import { PsychologistService } from '../../services/psychologist.service';
     }
 
     .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
       max-height: 0;
       overflow: hidden;
-      transition: max-height var(--transition-slow) ease-in-out;
+      transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1);
     }
 
     .card-content.expanded {
-      max-height: 1000px;
+      max-height: 3000px; /* Large enough for all content */
     }
 
     .content-inner {
+      flex: 1;
       padding: 0 var(--spacing-lg) var(--spacing-lg);
-      border-top: 1px solid rgba(139, 115, 85, 0.1);
+      /* Removed border-top to keep a single consistent separator */
+      display: grid;
+      grid-template-rows: auto 1fr auto; /* Biography, details, actions */
+      gap: var(--spacing-lg);
     }
 
     .biography-section {
@@ -347,9 +362,11 @@ import { PsychologistService } from '../../services/psychologist.service';
     }
 
     .card-actions {
+      margin-top: auto;
       text-align: center;
-      padding-top: var(--spacing-md);
+      padding: var(--spacing-md) var(--spacing-lg);
       border-top: 1px solid rgba(139, 115, 85, 0.1);
+      /* Positioned by grid; no auto margin needed */
     }
 
     /* Responsive Design */
@@ -407,8 +424,6 @@ export class TeamComponent implements OnInit {
   /** Observable com dados das psicólogas */
   psychologists$!: Observable<Psychologist[]>;
   
-  /** ID do card atualmente expandido */
-  expandedCard: string | null = null;
 
   constructor(private psychologistService: PsychologistService) {}
 
@@ -426,10 +441,9 @@ export class TeamComponent implements OnInit {
     return psychologist.id;
   }
 
-  /**
-   * Alterna o estado expandido/colapsado de um card
-   * @param psychologistId - ID da psicóloga
-   */
+  /** ID do card atualmente expandido */
+  expandedCard: string | null = null;
+  /** Alterna o estado expandido/colapsado de um card */
   toggleCard(psychologistId: string): void {
     this.expandedCard = this.expandedCard === psychologistId ? null : psychologistId;
   }
@@ -439,10 +453,9 @@ export class TeamComponent implements OnInit {
    * @param psychologistName - Nome da psicóloga
    */
   scheduleWithPsychologist(psychologistName: string): void {
-    const event = new CustomEvent('openAppointmentModal', {
-      detail: { preferredPsychologist: psychologistName }
-    });
-    document.dispatchEvent(event);
+    const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfqfPM11n8QKqNMOpQKo6vEduwQ7Fna5utR1mo69PbtDKUZMQ/viewform?sessionType=individual';
+    const url = `${baseUrl}&psychologist=${encodeURIComponent(psychologistName)}`;
+    window.open(url, '_blank');
   }
 
   /**

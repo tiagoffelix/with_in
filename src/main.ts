@@ -11,6 +11,7 @@ import { TeamComponent } from './components/team/team.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TestemunhosComponent } from './components/testemunhos/testemunhos.component';
 
 /**
  * Componente principal da aplicação With.in
@@ -26,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeroComponent,
     TeamComponent,
     ServicesComponent,
+    TestemunhosComponent,
     ContactComponent,
     FooterComponent
   ],
@@ -36,14 +38,17 @@ import { FooterComponent } from './components/footer/footer.component';
 
       <!-- Conteúdo principal -->
       <main class="main-content">
+        <!-- Seção Serviços -->
+        <app-services></app-services>
+
         <!-- Seção Hero -->
         <app-hero></app-hero>
 
         <!-- Seção Equipa -->
         <app-team></app-team>
 
-        <!-- Seção Serviços -->
-        <app-services></app-services>
+        <!-- Seção Testemunhos -->
+        <app-testemunhos></app-testemunhos>
 
         <!-- Seção Contacto -->
         <app-contact></app-contact>
