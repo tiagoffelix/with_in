@@ -76,13 +76,20 @@
 }
 
 .schedule {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 .schedule-item {
+  display: flex;
+  justify-content: space-between;
   font-size: var(--font-size-base);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.schedule-item:last-child {
+  border-bottom: none;
 }
 
 .contact-cta .btn-large {

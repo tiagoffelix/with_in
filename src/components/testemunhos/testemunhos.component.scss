@@ -22,9 +22,25 @@
 }
 
 .testemunhos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: var(--spacing-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* Custom horizontal scrollbar styling */
+  scrollbar-color: var(--color-neutral-medium) var(--color-primary-bg);
+  scrollbar-width: thin;
+}
+/* Webkit scrollbar for other browsers */
+.testemunhos-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.testemunhos-grid::-webkit-scrollbar-track {
+  background: var(--color-primary-bg);
+}
+.testemunhos-grid::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-medium);
+  border-radius: var(--radius-sm);
 }
 
 .testimonial-card {
@@ -33,6 +49,8 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  flex: 0 0 300px;
+  scroll-snap-align: start;
 }
 
 .testimonial-card:hover {
