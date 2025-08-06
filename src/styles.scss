@@ -294,6 +294,10 @@ html {
   opacity: 0.6;
   pointer-events: none;
 }
+/* Disable background scroll when modal open */
+body.no-scroll {
+  overflow: hidden;
+}
 
 .spinner {
   width: 20px;

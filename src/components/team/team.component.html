@@ -2,110 +2,111 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">A Nossa Equipa</h2>
-      <p class="section-subtitle">
-        Profissionais dedicadas ao teu bem-estar emocional e mental
-      </p>
     </div>
 
     <div class="team-scroll" *ngIf="psychologists$ | async as psychologists">
       <div class="team-grid">
-        <div class="team-card" *ngFor="let psychologist of psychologists; trackBy: trackByPsychologist" [class.expanded]="expandedCard === psychologist.id">
-          <div class="card-header" (click)="toggleCard(psychologist.id)" [attr.aria-expanded]="expandedCard === psychologist.id">
-            <div class="psychologist-photo">
-              <img 
-                [src]="psychologist.photo" 
-                [alt]="'Foto de ' + psychologist.name"
-                loading="lazy"
-                (error)="onImageError($event)"
-              />
-              <div class="photo-overlay" *ngIf="psychologist.isFounder">
-                <span class="founder-badge">Fundadora</span>
-              </div>
-            </div>
-            
-            <div class="psychologist-info">
-              <h3 class="psychologist-name">{{ psychologist.name }}</h3>
-              <p class="psychologist-title">{{ psychologist.title }}</p>
-              <p class="psychologist-summary">{{ psychologist.summary }}</p>
-              
-              <div class="specializations-preview">
-                <span 
-                  class="specialization-tag"
-                  *ngFor="let spec of psychologist.specializations.slice(0, 3)"
-                >
-                  {{ spec }}
-                </span>
-                <span 
-                  class="more-specializations"
-                  *ngIf="psychologist.specializations.length > 3"
-                >
-                  +{{ psychologist.specializations.length - 3 }}
-                </span>
-              </div>
-            </div>
-            
-            <div class="expand-icon">
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                stroke-width="2"
-                [style.transform]="expandedCard === psychologist.id ? 'rotate(180deg)' : 'none'"
-                style="transition: transform 0.3s;"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
+        <div 
+          class="team-card" 
+          *ngFor="let psychologist of psychologists; trackBy: trackByPsychologist"
+          (click)="openModal(psychologist)"
+        >
+          <div class="psychologist-photo">
+            <img 
+              [src]="psychologist.photo" 
+              [alt]="'Foto de ' + psychologist.name"
+              loading="lazy"
+              (error)="onImageError($event)"
+            />
+            <div class="photo-overlay" *ngIf="psychologist.isFounder">
+              <span class="founder-badge">Fundadora</span>
             </div>
           </div>
-
-          <div class="card-content" [class.expanded]="expandedCard === psychologist.id">
-            <div class="content-inner" *ngIf="expandedCard === psychologist.id">
-              <div class="biography-section">
-                <h4>Sobre</h4>
-                <p>{{ psychologist.biography }}</p>
-              </div>
-
-              <div class="details-grid">
-                <div class="detail-section">
-                  <h4>Especializações</h4>
-                  <ul>
-                    <li *ngFor="let spec of psychologist.specializations">{{ spec }}</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h4>Formação</h4>
-                  <ul>
-                    <li *ngFor="let edu of psychologist.education">{{ edu }}</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h4>Experiência</h4>
-                  <ul>
-                    <li *ngFor="let exp of psychologist.experience">{{ exp }}</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h4>Abordagens</h4>
-                  <ul>
-                    <li *ngFor="let approach of psychologist.approaches">{{ approach }}</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="card-actions">
-                <button 
-                  class="btn btn-primary"
-                  (click)="scheduleWithPsychologist(psychologist.name)"
-                >
-                  Agendar com {{ psychologist.name.split(' ')[0] }}
-                </button>
-              </div>
-            </div>
+          <div class="psychologist-info">
+            <h3 class="psychologist-name">{{ psychologist.name }}</h3>
+            <p class="psychologist-title">{{ psychologist.title }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Popup -->
+      <div class="modal-overlay" *ngIf="selectedPsychologist" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <button class="modal-close" (click)="closeModal()">×</button>
+          <div class="modal-photo">
+            <img 
+              [src]="selectedPsychologist.photo" 
+              [alt]="'Foto de ' + selectedPsychologist.name"
+            />
+          </div>
+          <!-- Static info per psychologist -->
+          <div class="modal-info">
+            <ng-container *ngIf="selectedPsychologist.id === 'joana-barbosa'">
+              <h3>JOANA BARBOSA – Fundadora - PSICÓLOGA CLÍNICA</h3>
+              <ul>
+                <li>Membro Efetivo da Ordem dos Psicólogos (OPP), Cédula Profissional nº 24800;</li>
+                <li>ISPA-IU - Instituto Universitário de Ciências Psicológicas, Sociais e da Vida - Mestre em Psicologia Clínica;</li>
+                <li>Certificado Europeu EuroPsy - European Federation of Psychologists Association - EFPA;</li>
+                <li>Membro certificado para a prática de supervisão pela Ordem dos Psicólogos Portugueses;</li>
+                <li>Especialização em intervenção Psicológica em Problemas Relacionados com o Álcool pela Ordem dos Psicólogos Portugueses;</li>
+                <li>Experiência em intervenção psicológica com adolescentes e adultos há 9 anos;</li>
+                <li>Formação Pedagógica Inicial de Formadores (CCP)</li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="selectedPsychologist.id === 'catarina-horta'">
+              <h3>CATARINA HORTA – Career Coach</h3>
+              <ul>
+                <li>Formadora do Grupo Speak and Lead especializada na área de Gestão de Equipas Remotas;</li>
+                <li>International Business Development Manager – Especialista em Gestão de Equipas Remotas e Desenvolvimento de Negócios;</li>
+                <li>Experiência em consultoria de Recursos Humanos e Tecnologia há mais de 8 anos;</li>
+                <li>Pós-Graduanda em Gestão de Empresas no ISEG Executive Education Formação Executiva em Leading People and Change – ISEG Executive Education;</li>
+                <li>Licenciada em Gestão de Recursos Humanos – ISCSP;</li>
+                <li>Formadora certificada com Certificado de Competências Pedagógicas (CCP)</li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="selectedPsychologist.id === 'rita-cunha'">
+              <h3>RITA CUNHA - PSICÓLOGA CLÍNICA</h3>
+              <ul>
+                <li>Membro Efetivo da Ordem dos Psicólogos (OPP), Cédula Profissional nº 30459;</li>
+                <li>Licenciatura em Ciências Psicológicas pela Universidade de Coimbra;</li>
+                <li>Universidade de Lisboa - Mestre em Psicologia da Educação e aconselhamento;</li>
+                <li>Especialização Pós-Universitária em Psicologia Clínica e da Saúde;</li>
+                <li>Especialização em Intervenção no Luto - FPCEUC;</li>
+                <li>Experiência ao nível do desenvolvimento de acções de formação;</li>
+                <li>Experiência em avaliação psicológica;</li>
+                <li>Formação Pedagógica Inicial de Formadores (CCP)</li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="selectedPsychologist.id === 'maria-dias'">
+              <h3>MARIA DIAS - PSICÓLOGA CLÍNICA</h3>
+              <ul>
+                <li>Membro Efetivo da Ordem dos Psicólogos (OPP), Cédula Profissional nº 25648</li>
+                <li>Mestrado Integrado em Psicologia na área de especialização Psicologia Clínica e da Saúde — Psicoterapia Sistémica e Familiar, pela Faculdade de Psicologia e de Ciências da Educação da Universidade de Coimbra — FPCEUC;</li>
+                <li>Formação Especializada em Intervenção Sistémica e Familiar pela Sociedade Portuguesa de Terapia Familiar (SPTF) (atualmente em supervisão);</li>
+                <li>Desenvolve prática clínica em contexto privado em Psicoterapia Individual (adolescente e adulto), Terapia Familiar e Terapia de Casal (Centro Cirúrgico de Coimbra, Nossa Casa, Workwell);</li>
+                <li>Certificado Internacional de Psicologia Europeu — EuroPsy com o n.º PT-067276-202110;</li>
+                <li>Adjunta de ensino do Mestrado em Psicologia Clínica Sistémica e da Saúde — MPCSS/FPCEUC;</li>
+                <li>Colaboradora na consulta de Terapia de Casal e Familiar do Centro de Prestação de Serviços à Comunidade da FPCEUC</li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="selectedPsychologist.id === 'sandra-fontes'">
+              <h3>SANDRA FONTES - PSICÓLOGA CLÍNICA</h3>
+              <ul>
+                <li>Membro Efetivo da Ordem dos Psicólogos Portugueses (OPP), Cédula Profissional nº 28904;</li>
+                <li>Licenciada em Psicologia pela Universidade Paris X.;</li>
+                <li>Mestrada em Psicologia Clínica e da Saúde pela Universidade de Trás-os-Montes e Alto Douro (UTAD) com abordagem Terapia Cognitivo-Comportamental.;</li>
+                <li>Workshops Terapias de Terceira Geração.;</li>
+                <li>Formação específica em PHDA no Adulto (com a Psicóloga Rita Gama Ferreira) e Autismo no Adulto (com a Psicóloga Joana Rodrigues).;</li>
+                <li>Curso prático de Nutrição e Dietética pelo Instituto Profissional de Estudos da Saúde.</li>
+              </ul>
+            </ng-container>
+          </div>
+          <div class="card-actions">
+            <button 
+              class="btn btn-primary"
+              (click)="scheduleWithPsychologist(selectedPsychologist.name)"
+            >
+              Agendar com {{ selectedPsychologist.name.split(' ')[0] }}
+            </button>
           </div>
         </div>
       </div>

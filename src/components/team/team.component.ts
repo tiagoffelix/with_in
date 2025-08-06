@@ -36,11 +36,19 @@ export class TeamComponent implements OnInit {
     return psychologist.id;
   }
 
-  /** ID do card atualmente expandido */
-  expandedCard: string | null = null;
+  /** Currently selected psychologist for modal display */
+  selectedPsychologist: Psychologist | null = null;
   /** Alterna o estado expandido/colapsado de um card */
-  toggleCard(psychologistId: string): void {
-    this.expandedCard = this.expandedCard === psychologistId ? null : psychologistId;
+  /** Opens modal with full psychologist details */
+  openModal(psychologist: Psychologist): void {
+    this.selectedPsychologist = psychologist;
+    // Prevent background scroll
+    document.body.classList.add('no-scroll');
+  }
+  /** Closes the modal */
+  closeModal(): void {
+    this.selectedPsychologist = null;
+    document.body.classList.remove('no-scroll');
   }
 
   /**

@@ -4,9 +4,6 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Os Nossos Serviços</h2>
-      <p class="section-subtitle">
-        Oferecemos diferentes modalidades terapêuticas adaptadas às tuas necessidades
-      </p>
     </div>
 
     <div class="services-grid">
@@ -21,11 +18,7 @@
         />
         
         <div class="service-content">
-          <img
-            class="service-title-img"
-            [src]="'/assets/services/' + service.icon + '.png'"
-            [alt]="service.name"
-          />
+          <h3 class="service-name">{{ service.name }}</h3>
           
           <!-- Toggle details -->
           <button class="btn btn-secondary" (click)="toggleService(service)">

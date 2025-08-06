@@ -78,18 +78,16 @@
 .schedule {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
 }
 
 .schedule-item {
   display: flex;
   justify-content: space-between;
   font-size: var(--font-size-base);
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-md) 0;
 }
-.schedule-item:last-child {
-  border-bottom: none;
+.schedule-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .contact-cta .btn-large {
