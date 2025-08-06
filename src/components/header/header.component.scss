@@ -120,7 +120,14 @@
   width: 100%;
 }
 
+.logo {
+  outline: none;
+}
+.logo:focus, .logo:hover {
+  outline: none;
+}
 .logo img {
+  border: none;
   height: 30px;
   width: auto;
 }

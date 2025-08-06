@@ -16,14 +16,14 @@
       >
         <img
           class="service-img"
-          [src]="'/assets/services/' + service.id + '.jpg'"
+          [src]="'/assets/services/' + service.id + '.png'"
           [alt]="service.name"
         />
         
         <div class="service-content">
           <img
             class="service-title-img"
-            [src]="'/assets/' + service.icon + '.png'"
+            [src]="'/assets/services/' + service.icon + '.png'"
             [alt]="service.name"
           />
           
@@ -35,6 +35,11 @@
           <!-- Expanded content -->
           <div *ngIf="expandedMap[service.id]" class="expanded-content">
             <p class="service-description">{{ service.description }}</p>
+            
+            <!-- Service price -->
+            <p class="service-price" *ngIf="service.id === 'individual-therapy'">Preço: 50€</p>
+            <p class="service-price" *ngIf="service.id === 'couple-therapy'">Preço: 80€</p>
+            <p class="service-price" *ngIf="service.id === 'career-coaching'">Preço: 70€</p>
             
             <div class="service-actions">
               <button 
