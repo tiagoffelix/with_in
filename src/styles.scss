@@ -199,6 +199,12 @@ h1, h2, h3, h4, h5, h6 {
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
+.floating-cta {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: 10000;
+}
 
 /* Colors */
 .text-primary { color: var(--color-text-primary); }

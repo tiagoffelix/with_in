@@ -1,5 +1,5 @@
 .testemunhos {
-  background: var(--color-primary-bg);
+  background-color: #F5F2E8; /* same background as services section */
 }
 
 .section-header {
@@ -29,7 +29,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   /* Custom horizontal scrollbar styling */
-  scrollbar-color: var(--color-neutral-medium) var(--color-primary-bg);
+  scrollbar-color: var(--color-neutral-medium) #F5F2E8;
   scrollbar-width: thin;
 }
 /* Webkit scrollbar for other browsers */
@@ -37,7 +37,7 @@
   height: 8px;
 }
 .testemunhos-grid::-webkit-scrollbar-track {
-  background: var(--color-primary-bg);
+  background: #F5F2E8;
 }
 .testemunhos-grid::-webkit-scrollbar-thumb {
   background: var(--color-neutral-medium);
