@@ -23,7 +23,11 @@
             </div>
           </div>
           <div class="psychologist-info">
-            <h3 class="psychologist-name">{{ psychologist.name }}</h3>
+            <h3 class="psychologist-name">
+              <ng-container *ngFor="let part of psychologist.name.split(' '); let isLast = last">
+                {{ part }}<br *ngIf="!isLast">
+              </ng-container>
+            </h3>
             <p class="psychologist-title">{{ psychologist.title }}</p>
           </div>
         </div>

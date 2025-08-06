@@ -100,10 +100,14 @@ body {
 
 .section-title, .hero-headline {
   font-family: 'Tenor Sans', cursive;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 /* Apply Tenor Sans to all headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Tenor Sans', cursive;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 .font-normal { font-weight: var(--font-weight-normal); }
 .font-medium { font-weight: var(--font-weight-medium); }

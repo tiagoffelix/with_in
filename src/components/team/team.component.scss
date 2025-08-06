@@ -221,6 +221,11 @@
   font-weight: var(--font-weight-semibold);
   margin: var(--spacing-xs) 0;
   text-transform: uppercase;
+  white-space: normal;
+  overflow-wrap: break-word;
+  /* ensure consistent two-line height for names */
+  line-height: 1.2;
+  min-height: 3rem;
 }
 
 .psychologist-title {
