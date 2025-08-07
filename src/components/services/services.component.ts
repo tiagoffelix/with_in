@@ -30,7 +30,7 @@ export class ServicesComponent implements OnInit {
      {
        id: 'individual-therapy',
        name: 'Terapia Individual',
-       description: 'As sessões individuais oferecem um espaço seguro, confidencial e acolhedor, pensado para ti. Aqui, podes explorar com tranquilidade aquilo que sentes, pensas ou vives, num ambiente de escuta atenta e sem julgamentos. O acompanhamento é adaptado às tuas necessidades e o objetivo é promover o teu bem-estar emocional e apoiar-te no teu caminho de crescimento e equilíbrio.',
+       description: 'As sessões individuais são um espaço só teu — seguro, acolhedor e sem julgamentos. Aqui podes falar sobre o que sentes, ao teu ritmo, com quem te escuta de forma genuína. Cada sessão tem a duração de 50 minutos e é adaptada às tuas necessidades.',
        icon: 'individual',
        features: [
          'Sessões personalizadas de 50 minutos',
@@ -44,7 +44,7 @@ export class ServicesComponent implements OnInit {
      {
        id: 'couple-therapy',
        name: 'Terapia de Casal',
-       description: 'As sessões de casal oferecem um espaço seguro, confidencial e equilibrado, onde ambos os parceiros podem expressar-se com liberdade e respeito. Através de uma escuta imparcial e de um trabalho conjunto, é possível explorar dificuldades na comunicação, conflitos, rotinas, intimidade ou outras dinâmicas da relação. O objetivo é promover maior compreensão mútua, fortalecer a ligação e apoiar o casal na construção de uma relação mais saudável, consciente e satisfatória para ambos.',
+       description: 'A terapia de casal é um espaço seguro para ambos se ouvirem, se expressarem e se compreenderem de forma mais clara e genuína. Trabalhamos juntos os desafios da relação — comunicação, conflitos, distanciamento, ou momentos de mudança — sempre com foco no reencontro e na construção de um vínculo mais saudável. As sessões têm uma duração entre 1h e 1h30, adaptadas às necessidades de cada casal. ',
        icon: 'couple',
        features: [
          'Sessões de 60 minutos para ambos os parceiros',
@@ -58,7 +58,7 @@ export class ServicesComponent implements OnInit {
      {
        id: 'career-coaching',
        name: 'Career Coaching',
-       description: 'As sessões de Career Coaching oferecem um espaço seguro, focado e personalizado para refletires sobre o teu percurso profissional, os teus objetivos e os próximos passos na tua carreira. Seja para mudares de área, descobrires o que te motiva, ganhares clareza sobre decisões importantes ou desenvolveres competências específicas, o acompanhamento é feito contigo e para ti. O objetivo é ajudar-te a construir um caminho profissional com mais sentido, alinhado com os teus valores, talentos e aspirações.',
+       description: 'Se sentes que precisas de clareza no teu percurso profissional, o career coaching pode ajudar-te a (re)descobrir o teu caminho. Seja para mudar de área, definir objetivos, ganhar confiança ou lidar com dúvidas e bloqueios, este é um espaço para te ouvires e planeares com intenção. As sessões têm a duração de 60 minutos e são totalmente orientadas para ti e para o que queres construir na tua vida profissional.',
        icon: 'career',
        features: [
          'Sessões de 60 minutos focadas nos teus objetivos de carreira',
@@ -71,7 +71,9 @@ export class ServicesComponent implements OnInit {
      }
    ];
 
-  // Independent expansion state per service
+  // Modal state for services popup
+  selectedService: Service | null = null;
+  // Independent expansion state per service (no longer used for inline expansion)
   expandedMap: Record<string, boolean> = {};
 
   ngOnInit(): void {
@@ -79,9 +81,14 @@ export class ServicesComponent implements OnInit {
     this.services.forEach(s => this.expandedMap[s.id] = false);
   }
 
-  // Toggle expansion on individual service item
-  toggleService(service: Service): void {
-    this.expandedMap[service.id] = !this.expandedMap[service.id];
+  // Open modal popup for selected service
+  openModal(service: Service): void {
+    this.selectedService = service;
+  }
+
+  // Close modal popup
+  closeModal(): void {
+    this.selectedService = null;
   }
 
   /**

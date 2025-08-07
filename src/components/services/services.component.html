@@ -20,29 +20,28 @@
         <div class="service-content">
           <h3 class="service-name">{{ service.name }}</h3>
           
-          <!-- Toggle details -->
-          <button class="btn btn-secondary" (click)="toggleService(service)">
-            {{ expandedMap[service.id] ? 'Saber menos' : 'Saber mais' }}
+          <!-- Open details in modal -->
+          <button class="btn btn-secondary" (click)="openModal(service)">
+            Saber mais
           </button>
-          
-          <!-- Expanded content -->
-          <div *ngIf="expandedMap[service.id]" class="expanded-content">
-            <p class="service-description">{{ service.description }}</p>
-            
-            <!-- Service price -->
-            <p class="service-price" *ngIf="service.id === 'individual-therapy'">Preço: 50€</p>
-            <p class="service-price" *ngIf="service.id === 'couple-therapy'">Preço: 80€</p>
-            <p class="service-price" *ngIf="service.id === 'career-coaching'">Preço: 70€</p>
-            
-            <div class="service-actions">
-              <button 
-                class="btn btn-primary"
-                (click)="scheduleService(service.name)"
-              >
-                Marca a tua sessão
-              </button>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Service Details Modal -->
+  <div class="modal-overlay" *ngIf="selectedService" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">×</button>
+      <div class="modal-header">
+        <h3 class="modal-title">{{ selectedService.name }}</h3>
+      </div>
+      <div class="modal-body">
+        <p class="service-description">{{ selectedService.description }}</p>
+        <p class="service-price" *ngIf="selectedService.id === 'individual-therapy'">Preço: 50€</p>
+        <p class="service-price" *ngIf="selectedService.id === 'couple-therapy'">Preço: 80€</p>
+        <p class="service-price" *ngIf="selectedService.id === 'career-coaching'">Preço: 70€</p>
+        <div class="service-actions">
+          <button class="btn btn-primary" (click)="scheduleService(selectedService.name)">Marca a tua sessão</button>
         </div>
       </div>
     </div>
