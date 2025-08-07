@@ -69,19 +69,6 @@ import { CommonModule } from '@angular/common';
           </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="footer-cta">
-          <div class="cta-content">
-            <h3>Pronto para começar a tua jornada?</h3>
-            <p>Agenda a tua primeira sessão e dá o primeiro passo para o teu bem-estar.</p>
-            <button 
-              class="btn btn-primary"
-              (click)="redirectToGoogleForms()"
-            >
-              Agendar Sessão
-            </button>
-          </div>
-        </div>
 
         <!-- Copyright -->
         <div class="footer-bottom">
@@ -97,8 +84,8 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     .footer {
-      background: linear-gradient(135deg, var(--color-accent) 0%, #6B5A42 100%);
-      color: var(--color-white);
+      background-color: #F5F2E8;
+      color: var(--color-text-primary);
       padding: var(--spacing-xxl) 0 var(--spacing-lg);
     }
 
@@ -121,7 +108,7 @@ import { CommonModule } from '@angular/common';
       font-family: 'Poppins', sans-serif;
       font-size: var(--font-size-3xl);
       font-weight: var(--font-weight-semibold);
-      color: var(--color-white);
+      color: var(--color-text-primary);
       letter-spacing: -0.02em;
     }
 
@@ -145,7 +132,7 @@ import { CommonModule } from '@angular/common';
       font-size: var(--font-size-lg);
       font-weight: var(--font-weight-semibold);
       margin-bottom: var(--spacing-md);
-      color: var(--color-white);
+      color: var(--color-text-primary);
     }
 
     .nav-links,
@@ -161,18 +148,18 @@ import { CommonModule } from '@angular/common';
     }
 
     .nav-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--color-text-secondary);
       text-decoration: none;
       font-size: var(--font-size-sm);
       transition: color var(--transition-normal);
     }
 
     .nav-links a:hover {
-      color: var(--color-white);
+      color: var(--color-text-primary);
     }
 
     .service-links li {
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--color-text-secondary);
       font-size: var(--font-size-sm);
     }
 
@@ -186,14 +173,14 @@ import { CommonModule } from '@angular/common';
       display: flex;
       align-items: center;
       gap: var(--spacing-xs);
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--color-text-secondary);
       text-decoration: none;
       font-size: var(--font-size-sm);
       transition: color var(--transition-normal);
     }
 
     .contact-link:hover {
-      color: var(--color-white);
+      color: var(--color-text-primary);
     }
 
     .contact-link svg {
@@ -227,13 +214,13 @@ import { CommonModule } from '@angular/common';
     }
 
     .cta-content .btn {
-      background: var(--color-white);
-      color: var(--color-accent);
+      background: var(--color-neutral-medium);
+      color: var(--color-white);
       font-weight: var(--font-weight-medium);
     }
 
     .cta-content .btn:hover {
-      background: rgba(255, 255, 255, 0.9);
+      background-color: var(--color-neutral-dark);
       transform: translateY(-2px);
     }
 

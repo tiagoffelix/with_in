@@ -37,9 +37,9 @@
       </div>
       <div class="modal-body">
         <p class="service-description">{{ selectedService.description }}</p>
-        <p class="service-price" *ngIf="selectedService.id === 'individual-therapy'">Preço: 50€</p>
-        <p class="service-price" *ngIf="selectedService.id === 'couple-therapy'">Preço: 80€</p>
-        <p class="service-price" *ngIf="selectedService.id === 'career-coaching'">Preço: 70€</p>
+        <p class="service-price" *ngIf="selectedService.id === 'individual-therapy'">Valor: 50€</p>
+        <p class="service-price" *ngIf="selectedService.id === 'couple-therapy'">Valor: 80€</p>
+        <p class="service-price" *ngIf="selectedService.id === 'career-coaching'">Valor: 70€</p>
         <div class="service-actions">
           <button class="btn btn-primary" (click)="scheduleService(selectedService.name)">Marca a tua sessão</button>
         </div>
