@@ -16,7 +16,6 @@
               [src]="psychologist.photo" 
               [alt]="'Foto de ' + psychologist.name"
               loading="lazy"
-              (error)="onImageError($event)"
             />
             <div class="photo-overlay" *ngIf="psychologist.isFounder">
               <span class="founder-badge">Fundadora</span>
