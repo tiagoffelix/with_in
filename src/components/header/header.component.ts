@@ -9,6 +9,7 @@ import { ScrollService } from 'shared/scroll.service';
  */
 @Component({
     selector: 'app-header',
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']

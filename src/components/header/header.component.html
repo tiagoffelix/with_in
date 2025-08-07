@@ -6,14 +6,29 @@
       </a>
       <nav class="nav-desktop">
         <ul class="nav-list">
-          <li><a class="nav-link" href="#home">Início</a></li>
-          <li><a class="nav-link" href="#team">Equipa</a></li>
           <li><a class="nav-link" href="#services">Serviços</a></li>
-              <li><a class="nav-link" href="#testemunhos">Testemunhos</a></li>
+          <li><a class="nav-link" href="#home">Missão</a></li>
+          <li><a class="nav-link" href="#team">Equipa</a></li>
+          <li><a class="nav-link" href="#testemunhos">Testemunhos</a></li>
           <li><a class="nav-link" href="#contact">Contacto</a></li>
         </ul>
+      </nav> <!-- nav-desktop -->
+      <!-- Mobile menu toggle -->
+      <button type="button" class="mobile-menu-toggle" (click)="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <!-- Mobile navigation menu -->
+      <nav class="nav-mobile" [class.open]="isMobileMenuOpen">
+        <ul class="nav-list-mobile">
+          <li><a class="nav-link" href="#services" (click)="toggleMobileMenu(); scrollService.scrollToSection('services', $event)">Serviços</a></li>
+          <li><a class="nav-link" href="#home" (click)="toggleMobileMenu(); scrollService.scrollToSection('home', $event)">Missão</a></li>
+          <li><a class="nav-link" href="#team" (click)="toggleMobileMenu(); scrollService.scrollToSection('team', $event)">Equipa</a></li>
+          <li><a class="nav-link" href="#testemunhos" (click)="toggleMobileMenu(); scrollService.scrollToSection('testemunhos', $event)">Testemunhos</a></li>
+          <li><a class="nav-link" href="#contact" (click)="toggleMobileMenu(); scrollService.scrollToSection('contact', $event)">Contacto</a></li>
+        </ul>
       </nav>
-      <i class="bi bi-list mobile-nav-toggle"></i>
     </div>
   </div>
 </header>

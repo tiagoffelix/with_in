@@ -2,10 +2,9 @@
   background-color: #F5F2E8; /* match site section background */
   color: var(--color-text-primary);
   padding: var(--spacing-xxl) 0 var(--spacing-lg);
-.footer-nav h4,
-.footer-services h4,
-.footer-contact h4 {
+}
 
+/* Removed empty redundant selector block */
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
@@ -178,6 +177,4 @@
   .contact-link {
     justify-content: center;
   }
-}
-}
 }

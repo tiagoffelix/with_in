@@ -10,6 +10,7 @@ import { PsychologistService } from '../../services/psychologist.service';
  */
 @Component({
     selector: 'app-team',
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './team.component.html',
     styleUrls: ['./team.component.scss']

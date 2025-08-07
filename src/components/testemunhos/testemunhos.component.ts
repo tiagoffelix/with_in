@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-testemunhos',
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './testemunhos.component.html',
     styleUrls: ['./testemunhos.component.scss']

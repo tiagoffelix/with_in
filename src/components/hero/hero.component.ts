@@ -8,6 +8,7 @@ import { ScrollService } from '../../shared/scroll.service';
  */
 @Component({
     selector: 'app-hero',
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './hero.component.html',
     styleUrls: ['./hero.component.scss']
