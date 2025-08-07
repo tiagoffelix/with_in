@@ -7,11 +7,10 @@ import { ScrollService } from '../../shared/scroll.service';
  * Contém headline, texto descritivo e call-to-action principal
  */
 @Component({
-  selector: 'app-hero',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+    selector: 'app-hero',
+    imports: [CommonModule],
+    templateUrl: './hero.component.html',
+    styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
   /** Estado de visibilidade para animações */

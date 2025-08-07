@@ -18,11 +18,10 @@ interface Service {
  * Exibe cards com informações detalhadas dos tipos de terapia
  */
 @Component({
-  selector: 'app-services',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+    selector: 'app-services',
+    imports: [CommonModule],
+    templateUrl: './services.component.html',
+    styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
    /** Lista de serviços oferecidos pela clínica */

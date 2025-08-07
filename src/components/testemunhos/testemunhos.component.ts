@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 // Use numeric IDs for testimonial images
 
 @Component({
-  selector: 'app-testemunhos',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './testemunhos.component.html',
-  styleUrls: ['./testemunhos.component.scss']
+    selector: 'app-testemunhos',
+    imports: [CommonModule],
+    templateUrl: './testemunhos.component.html',
+    styleUrls: ['./testemunhos.component.scss']
 })
 export class TestemunhosComponent implements OnInit {
   // IDs correspond to testimonial images named 1.jpg through 7.jpg

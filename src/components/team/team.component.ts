@@ -9,11 +9,10 @@ import { PsychologistService } from '../../services/psychologist.service';
  * Exibe cards com informações das profissionais em formato accordion
  */
 @Component({
-  selector: 'app-team',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './team.component.html',
-  styleUrls: ['./team.component.scss']
+    selector: 'app-team',
+    imports: [CommonModule],
+    templateUrl: './team.component.html',
+    styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
   /** Observable com dados das psicólogas */

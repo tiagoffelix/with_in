@@ -6,10 +6,9 @@ import { CommonModule } from '@angular/common';
  * Contém informações de contato, navegação e copyright
  */
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-footer',
+    imports: [CommonModule],
+    template: `
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -82,7 +81,7 @@ import { CommonModule } from '@angular/common';
       </div>
     </footer>
   `,
-  styles: [`
+    styles: [`
     .footer {
       background-color: #F5F2E8;
       color: var(--color-text-primary);

@@ -8,11 +8,10 @@ import { ScrollService } from 'shared/scroll.service';
  * Responsivo com menu hamburger para mobile
  */
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    imports: [CommonModule],
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   /** Estado do scroll da página */
