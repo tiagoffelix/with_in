@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, APP_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from '@angular/router';
@@ -26,6 +26,9 @@ import { FooterComponent } from '../components/footer/footer.component';
     TestemunhosComponent,
     ContactComponent,
     FooterComponent
+  ],
+  providers: [
+    { provide: APP_ID, useValue: 'with-in' }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add support for custom elements
   bootstrap: [AppComponent]
