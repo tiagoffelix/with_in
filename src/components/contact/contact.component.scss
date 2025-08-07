@@ -30,6 +30,17 @@
   gap: var(--spacing-xxl);
   margin-bottom: var(--spacing-xxl);
 }
+/* Mobile: stack columns */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  .contact-cta {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
 
 .contact-info {
   display: flex;

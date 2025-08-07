@@ -91,3 +91,15 @@ form {
 .message.error {
   color: var(--color-danger);
 }
+
+/* Mobile responsiveness for appointment modal */
+@media (max-width: 480px) {
+  .modal {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+  }
+  .modal-overlay {
+    padding: var(--spacing-sm);
+  }
+}

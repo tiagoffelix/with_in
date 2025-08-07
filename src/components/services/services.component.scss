@@ -139,8 +139,19 @@
 }
 
 @media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
   .service-card {
     padding: var(--spacing-md);
+  }
+}
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
 }
 
