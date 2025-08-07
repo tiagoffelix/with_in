@@ -22,7 +22,10 @@
   justify-content: space-between;
   padding: var(--spacing-sm) 0;
   min-height: 70px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 .nav-desktop {
   display: flex;
@@ -62,15 +65,6 @@
   margin-left: var(--spacing-lg);
 }
 
-
-
-
-
-
-
-
-
-
 .logo {
   outline: none;
 }
@@ -89,6 +83,10 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+}
+.mobile-menu-toggle:focus {
+  outline: none;
+  box-shadow: none;
 }
 /* Hamburger line bars */
 .mobile-menu-toggle .hamburger-line {
