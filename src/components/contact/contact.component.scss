@@ -1,5 +1,5 @@
 .contact {
-  background-color: var(--color-white);
+  background-color: #F5F2E8; /* match services section background */
 }
 
 .section-header {
@@ -38,12 +38,12 @@
 
 .contact-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
-  background: var(--color-primary-bg);
+  background: transparent; /* remove white background */
   border-radius: var(--radius-md);
-  border: 1px solid rgba(139, 115, 85, 0.1);
+  border: none;
   transition: all var(--transition-normal);
 }
 
@@ -56,8 +56,10 @@
   flex-shrink: 0;
   width: 50px;
   height: 50px;
-  background: var(--color-accent);
+  background: transparent;
+  border: 2px solid var(--color-neutral-medium);
   border-radius: var(--radius-full);
+  color: var(--color-neutral-medium);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,28 +68,30 @@
 .contact-icon svg {
   width: 24px;
   height: 24px;
-  color: var(--color-white);
+  color: inherit;
 }
 
 .contact-link {
   color: var(--color-text-primary);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
 }
 
 .schedule {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 .schedule-item {
   display: flex;
   justify-content: space-between;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   padding: var(--spacing-md) 0;
 }
 .schedule-item:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none;
 }
 
 .contact-cta .btn-large {
@@ -97,7 +101,8 @@
 }
 
 .contact-cta .cta-card {
-  background: var(--color-primary-bg);
+  background: transparent;
+  border: none;
   padding: var(--spacing-xxl);
   border-radius: var(--radius-md);
   text-align: center;
