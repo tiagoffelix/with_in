@@ -87,8 +87,8 @@
 .schedule-item {
   display: flex;
   justify-content: space-between;
+  gap: var(--spacing-lg);
   font-size: var(--font-size-lg);
-  padding: var(--spacing-md) 0;
 }
 .schedule-item:not(:last-child) {
   border-bottom: none;
