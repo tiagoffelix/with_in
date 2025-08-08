@@ -27,14 +27,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular app
+      - name: Build Angular app (root base href for custom domain)
+        run: npm run build
+
+      - name: Add CNAME and 404 fallback
         run: |
-          npm run build -- --base-href=/with_in/
+          echo with-in.pt > dist/with_in/browser/CNAME
+          cp dist/with_in/browser/index.html dist/with_in/browser/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/with_in/browser
+            path: dist/with_in/browser
 
   deploy:
     runs-on: ubuntu-latest
