@@ -137,6 +137,36 @@
   display: none;
 }
 
+/* Loop scroll carousel */
+.loop-scroll {
+  position: relative;
+  overflow: hidden;
+}
+.loop-track {
+  display: flex;
+  gap: var(--spacing-lg);
+  width: max-content;
+  animation: loop-scroll 28s linear infinite;
+}
+.loop-scroll:hover .loop-track {
+  animation-play-state: paused;
+}
+@keyframes loop-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Ensure team cards fit nicely in loop */
+.loop-track .team-card {
+  width: 300px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+  .loop-track { animation-duration: 20s; }
+  .loop-track .team-card { width: 260px; }
+}
+
 .team-grid {
   display: flex;
   flex-wrap: nowrap;
@@ -401,6 +431,9 @@
   .content-inner {
     padding: 0 var(--spacing-md) var(--spacing-md);
   }
+
+  .loop-track { animation-duration: 20s; }
+  .loop-track .team-card { width: 260px; }
 }
 
 @media (max-width: 480px) {

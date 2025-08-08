@@ -18,12 +18,21 @@ import { PsychologistService } from '../../services/psychologist.service';
 export class TeamComponent implements OnInit {
   /** Observable com dados das psicólogas */
   psychologists$!: Observable<Psychologist[]>;
+  /** Listas para scroll infinito */
+  psychologists: Psychologist[] = [];
+  repeatedPsychologists: Psychologist[] = [];
   
 
   constructor(private psychologistService: PsychologistService) {}
 
   ngOnInit(): void {
     this.psychologists$ = this.psychologistService.getAllPsychologists();
+    // Também manter uma cópia local para criar lista duplicada
+    this.psychologists$.subscribe(list => {
+      this.psychologists = list;
+      // duplicar para permitir loop contínuo
+      this.repeatedPsychologists = [...list, ...list];
+    });
   }
 
   /**
@@ -33,7 +42,7 @@ export class TeamComponent implements OnInit {
    * @returns ID único para tracking
    */
   trackByPsychologist(index: number, psychologist: Psychologist): string {
-    return psychologist.id;
+    return psychologist.id + '-' + index;
   }
 
   /** Currently selected psychologist for modal display */
