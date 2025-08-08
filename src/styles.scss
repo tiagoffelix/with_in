@@ -231,6 +231,11 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10000;
 }
 
+/* Hide floating CTA when any modal is open */
+body.no-scroll .floating-cta {
+  display: none !important;
+}
+
 /* Colors */
 .text-primary { color: var(--color-text-primary); }
 .text-secondary { color: var(--color-text-secondary); }

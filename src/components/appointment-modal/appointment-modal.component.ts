@@ -37,10 +37,13 @@ export class AppointmentModalComponent implements OnInit {
     this.successMessage = '';
     this.errorMessage = '';
     this.form.reset();
+    // Prevent background scroll and hide floating CTA
+    document.body.classList.add('no-scroll');
   }
 
   close(): void {
     this.visible = false;
+    document.body.classList.remove('no-scroll');
   }
 
   submit(): void {

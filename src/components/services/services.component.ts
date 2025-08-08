@@ -84,11 +84,14 @@ export class ServicesComponent implements OnInit {
   // Open modal popup for selected service
   openModal(service: Service): void {
     this.selectedService = service;
+    // Prevent background scroll and hide floating CTA
+    document.body.classList.add('no-scroll');
   }
 
   // Close modal popup
   closeModal(): void {
     this.selectedService = null;
+    document.body.classList.remove('no-scroll');
   }
 
   /**
