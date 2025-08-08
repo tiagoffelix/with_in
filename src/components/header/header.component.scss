@@ -6,8 +6,10 @@
   z-index: 1000;
   background-color: rgba(245, 242, 232, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all var(--transition-normal);
   border-bottom: 1px solid transparent;
+  padding-top: env(safe-area-inset-top);
 }
 
 .header.scrolled {
@@ -106,8 +108,11 @@
   right: 0;
   background-color: rgba(245, 242, 232, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: var(--spacing-md);
   z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-mobile.open {

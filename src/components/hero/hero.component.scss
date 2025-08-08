@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh; /* iOS Safari safe viewport height */
   display: flex;
   align-items: center;
   padding: var(--spacing-xxxl) 0 var(--spacing-xxl);
@@ -122,7 +123,7 @@
 .hero-actions  { animation: fadeInUp 0.8s ease-out 0.6s both; }
 
 @media (max-width: 768px) {
-  .hero { min-height: 90vh; padding: var(--spacing-xxl) 0 var(--spacing-xl); }
+  .hero { min-height: 90vh; min-height: 90dvh; padding: var(--spacing-xxl) 0 var(--spacing-xl); }
   .hero-content {
     flex-direction: column;
     text-align: center;
