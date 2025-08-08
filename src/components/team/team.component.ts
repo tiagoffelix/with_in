@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Psychologist } from '../../models/psychologist.model';
 import { PsychologistService } from '../../services/psychologist.service';
+import { ElementRef } from '@angular/core';
 
 /**
  * Componente Team - Seção da equipa de psicólogas
@@ -15,7 +16,7 @@ import { PsychologistService } from '../../services/psychologist.service';
     templateUrl: './team.component.html',
     styleUrls: ['./team.component.scss']
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   /** Observable com dados das psicólogas */
   psychologists$!: Observable<Psychologist[]>;
   /** Listas para scroll infinito */
@@ -23,7 +24,7 @@ export class TeamComponent implements OnInit {
   repeatedPsychologists: Psychologist[] = [];
   
 
-  constructor(private psychologistService: PsychologistService) {}
+  constructor(private psychologistService: PsychologistService, private el: ElementRef) {}
 
   ngOnInit(): void {
     this.psychologists$ = this.psychologistService.getAllPsychologists();
@@ -33,6 +34,26 @@ export class TeamComponent implements OnInit {
       // duplicar para permitir loop contínuo
       this.repeatedPsychologists = [...list, ...list];
     });
+  }
+
+  private loopObserver?: IntersectionObserver;
+  ngAfterViewInit(): void {
+    const track: HTMLElement | null = this.el.nativeElement.querySelector('.team .loop-track');
+    if (track && 'IntersectionObserver' in window) {
+      this.loopObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            track.classList.add('in-view');
+          } else {
+            track.classList.remove('in-view');
+          }
+        });
+      }, { threshold: 0.1 });
+      this.loopObserver.observe(track);
+    }
+  }
+  ngOnDestroy(): void {
+    this.loopObserver?.disconnect();
   }
 
   /**

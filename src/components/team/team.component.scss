@@ -147,10 +147,10 @@
   gap: var(--spacing-lg);
   width: max-content;
   animation: loop-scroll 28s linear infinite;
+  animation-play-state: paused; /* paused by default */
 }
-.loop-scroll:hover .loop-track {
-  animation-play-state: paused;
-}
+.loop-track.in-view { animation-play-state: running; }
+.loop-scroll:hover .loop-track.in-view { animation-play-state: paused; }
 @keyframes loop-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -164,6 +164,7 @@
 
 @media (max-width: 768px) {
   .loop-track { animation-duration: 20s; }
+  .loop-track.in-view { animation-play-state: running; }
   .loop-track .team-card { width: 260px; }
 }
 
@@ -433,6 +434,7 @@
   }
 
   .loop-track { animation-duration: 20s; }
+  .loop-track.in-view { animation-play-state: running; }
   .loop-track .team-card { width: 260px; }
 }
 
@@ -458,3 +460,6 @@
     padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md);
   }
 }
+
+/* Ensure body doesn't scroll when modals are open */
+body.no-scroll .team .loop-track { animation-play-state: paused !important; }

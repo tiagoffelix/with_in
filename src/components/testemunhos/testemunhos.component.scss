@@ -165,10 +165,10 @@
   gap: var(--spacing-lg);
   width: max-content;
   animation: loop-scroll 28s linear infinite;
+  animation-play-state: paused; /* default paused */
 }
-.loop-scroll:hover .loop-track {
-  animation-play-state: paused;
-}
+.loop-track.in-view { animation-play-state: running; }
+.loop-scroll:hover .loop-track.in-view { animation-play-state: paused; }
 @keyframes loop-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -198,5 +198,6 @@ body.no-scroll .testemunhos .loop-track {
     grid-template-columns: 1fr;
   }
   .loop-track { animation-duration: 20s; }
+  .loop-track.in-view { animation-play-state: running; }
   .loop-track .testimonial-image { width: 260px; height: 200px; }
 }
