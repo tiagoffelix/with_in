@@ -13,6 +13,21 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-md);
+  /* keep title on a single line */
+  white-space: nowrap;
+  /* reduce letter spacing so it fits better */
+  letter-spacing: 0.15em;
+  /* safety: avoid accidental overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    /* slightly smaller on very small screens to keep one line */
+    font-size: var(--font-size-3xl);
+    letter-spacing: 0.12em;
+  }
 }
 
 .section-subtitle {

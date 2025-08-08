@@ -13,6 +13,25 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-md);
+  /* allow wrapping to prevent overflow */
+  white-space: normal;
+  /* slightly reduce letter spacing for long word on small screens */
+  letter-spacing: 0.2em;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: var(--font-size-3xl);
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: var(--font-size-2xl);
+    letter-spacing: 0.12em;
+  }
 }
 
 .section-subtitle {
