@@ -136,8 +136,48 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Loop scroll carousel like team */
+.loop-scroll {
+  position: relative;
+  overflow: hidden;
+}
+.loop-track {
+  display: flex;
+  gap: var(--spacing-lg);
+  width: max-content;
+  animation: loop-scroll 28s linear infinite;
+}
+.loop-scroll:hover .loop-track {
+  animation-play-state: paused;
+}
+@keyframes loop-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Pause loop when any modal is open (e.g., zoomed image) */
+body.no-scroll .testemunhos .loop-track {
+  animation-play-state: paused !important;
+}
+
+/* Explicitly pause animation with .paused class */
+.loop-track.paused {
+  animation-play-state: paused !important;
+}
+
+/* Ensure testimonial images fit nicely in loop */
+.loop-track .testimonial-image {
+  width: 350px;
+  height: 250px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
 @media (max-width: 768px) {
   .testemunhos-grid {
     grid-template-columns: 1fr;
   }
+  .loop-track { animation-duration: 20s; }
+  .loop-track .testimonial-image { width: 260px; height: 200px; }
 }

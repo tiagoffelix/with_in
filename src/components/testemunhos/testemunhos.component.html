@@ -3,16 +3,20 @@
     <div class="section-header">
       <h2 class="section-title">TESTEMUNHOS</h2>
     </div>
-    <div class="testemunhos-grid">
+
+    <div class="loop-scroll" *ngIf="repeatedTestimonials.length">
+      <div class="loop-track" [class.paused]="selectedTestimonial">
         <img
           class="testimonial-image"
-          *ngFor="let t of testimonials"
+          *ngFor="let t of repeatedTestimonials"
           [src]="'/assets/testemunhos/' + t + '.png'"
           [alt]="'Testemunho ' + t"
           loading="lazy"
+          decoding="async"
           (click)="openModal(t)"
         />
-    </div>  <!-- end of testemunhos-grid -->
+      </div>
+    </div>
 
     <!-- Modal for enlarged testimonial image -->
     <div class="modal-overlay" *ngIf="selectedTestimonial" (click)="closeModal()">
