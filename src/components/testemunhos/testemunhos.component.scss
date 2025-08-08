@@ -63,6 +63,7 @@
   object-fit: cover;
   border-radius: var(--radius-md);
   display: block;
+  cursor: zoom-in;
 }
 
 .testimonial-card:hover {
@@ -87,6 +88,52 @@
   text-align: right;
   margin-top: var(--spacing-sm);
   letter-spacing: 0.5px;
+}
+
+/* Image modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  z-index: 10000;
+}
+
+.modal-content {
+  position: relative;
+  background: transparent;
+  border-radius: var(--radius-md);
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 768px) {
