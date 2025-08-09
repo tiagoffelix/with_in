@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://with-in.pt/sitemap.xml
