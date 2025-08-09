@@ -156,48 +156,30 @@
 }
 
 /* Loop scroll carousel like team */
-.loop-scroll {
-  position: relative;
-  overflow: hidden;
-}
+.loop-scroll { position: relative; overflow: hidden; }
 .loop-track {
   display: flex;
   gap: var(--spacing-lg);
   width: max-content;
   animation: loop-scroll 28s linear infinite;
-  animation-play-state: paused; /* default paused */
+  animation-play-state: running; /* default running like team */
 }
-.loop-track.in-view { animation-play-state: running; }
-.loop-scroll:hover .loop-track.in-view { animation-play-state: paused; }
-@keyframes loop-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* Pause only when explicitly out of view or modal sets paused */
+.loop-track:not(.in-view) { animation-play-state: paused; }
+body.no-scroll .testemunhos .loop-track { animation-play-state: paused !important; }
+.loop-track.paused { animation-play-state: paused !important; }
 
-/* Pause loop when any modal is open (e.g., zoomed image) */
-body.no-scroll .testemunhos .loop-track {
-  animation-play-state: paused !important;
-}
-
-/* Explicitly pause animation with .paused class */
-.loop-track.paused {
-  animation-play-state: paused !important;
-}
+@keyframes loop-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Ensure testimonial images fit nicely in loop */
-.loop-track .testimonial-image {
-  width: 350px;
-  height: 250px;
-  flex: 0 0 auto;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-}
+.loop-track .testimonial-image { width: 350px; height: 250px; flex: 0 0 auto; object-fit: cover; border-radius: var(--radius-md); }
 
 @media (max-width: 768px) {
-  .testemunhos-grid {
-    grid-template-columns: 1fr;
-  }
   .loop-track { animation-duration: 20s; }
-  .loop-track.in-view { animation-play-state: running; }
   .loop-track .testimonial-image { width: 260px; height: 200px; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Pause loop on hover for desktop/mouse users only */
+  .loop-track:hover { animation-play-state: paused !important; }
 }

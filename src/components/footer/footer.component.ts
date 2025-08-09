@@ -26,6 +26,20 @@ export class FooterComponent {
   }
 
   /**
+   * Abre um serviço específico na secção de serviços
+   */
+  openService(serviceId: string, event: Event): void {
+    // Scroll to services first
+    this.scrollToSection('services', event);
+    // After scroll animation, try to open the modal by clicking the matching card's button
+    setTimeout(() => {
+      const card = document.querySelector(`.services .service-card img[src*="${serviceId}"]`);
+      const btn = card?.closest('.service-card')?.querySelector('button.btn.btn-secondary') as HTMLButtonElement | null;
+      btn?.click();
+    }, 600);
+  }
+
+  /**
    * Redireciona para o Google Forms para agendamento
    */
   redirectToGoogleForms(): void {

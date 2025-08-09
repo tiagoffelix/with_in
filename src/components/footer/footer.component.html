@@ -18,9 +18,9 @@
       <div class="footer-nav">
         <h4>Navegação</h4>
         <ul class="nav-links">
-          <li><a href="#home" (click)="scrollToSection('home', $event)">Início</a></li>
-          <li><a href="#team" (click)="scrollToSection('team', $event)">Equipa</a></li>
           <li><a href="#services" (click)="scrollToSection('services', $event)">Serviços</a></li>
+          <li><a href="#home" (click)="scrollToSection('home', $event)">Missão</a></li>
+          <li><a href="#team" (click)="scrollToSection('team', $event)">Equipa</a></li>
           <li><a href="#testemunhos" (click)="scrollToSection('testemunhos', $event)">Testemunhos</a></li>
           <li><a href="#contact" (click)="scrollToSection('contact', $event)">Contacto</a></li>
         </ul>
@@ -30,9 +30,15 @@
       <div class="footer-services">
         <h4>Serviços</h4>
         <ul class="service-links">
-          <li>Terapia Individual</li>
-          <li>Terapia de Casal</li>
-          <li>Career Coaching</li>
+          <li>
+            <a href="#services" (click)="openService('individual-therapy', $event)">Terapia Individual</a>
+          </li>
+          <li>
+            <a href="#services" (click)="openService('couple-therapy', $event)">Terapia de Casal</a>
+          </li>
+          <li>
+            <a href="#services" (click)="openService('career-coaching', $event)">Career Coaching</a>
+          </li>
         </ul>
       </div>
 
