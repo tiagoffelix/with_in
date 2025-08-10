@@ -1,9 +1,14 @@
 <app-header></app-header>
-<app-services></app-services>
-<app-hero></app-hero>
-<app-team></app-team>
-<app-testemunhos></app-testemunhos>
-<app-contact></app-contact>
+<ng-container *ngIf="isHome; else routed">
+  <app-services></app-services>
+  <app-hero></app-hero>
+  <app-team></app-team>
+  <app-testemunhos></app-testemunhos>
+  <app-contact></app-contact>
+</ng-container>
+<ng-template #routed>
+  <router-outlet></router-outlet>
+</ng-template>
 <app-footer></app-footer>
 <!-- Floating schedule button -->
 <a

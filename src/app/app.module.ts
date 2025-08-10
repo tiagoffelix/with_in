@@ -20,7 +20,11 @@ import { FooterComponent } from '../components/footer/footer.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled',
+      scrollOffset: [0, 70]
+    }),
     HeaderComponent,
     HeroComponent,
     TeamComponent,

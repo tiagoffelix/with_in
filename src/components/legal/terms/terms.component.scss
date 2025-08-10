@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  background-color: #F5F2E8; /* eggshell like main sections/footer */
+}
+
+.legal-page {
+  padding: var(--spacing-xxl) var(--spacing-sm);
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+.legal-page h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.legal-page h2 {
+  margin-top: var(--spacing-xl);
+  font-size: var(--font-size-xl);
+}
+
+.legal-page h3 {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-lg);
+}
+
+.legal-page p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: var(--spacing-sm) 0;
+}
+
+.legal-page ul {
+  padding-left: 1.2rem;
+}
+
+.legal-page a {
+  color: var(--color-neutral-medium);
+  text-decoration: none;
+}
+
+.legal-page a:hover {
+  color: var(--color-neutral-dark);
+  text-decoration: underline;
+}

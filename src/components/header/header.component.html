@@ -1,16 +1,16 @@
 <header id="header" class="header" [class.scrolled]="isScrolled">
   <div class="container">
     <div class="header-content">
-      <a href="#home" class="logo">
+      <a [routerLink]="['/']" [fragment]="'home'" class="logo">
         <img src="assets/logo.png" alt="With.in logo" loading="lazy" decoding="async" />
       </a>
       <nav class="nav-desktop">
         <ul class="nav-list">
-          <li><a class="nav-link" href="#services">Serviços</a></li>
-          <li><a class="nav-link" href="#home">Missão</a></li>
-          <li><a class="nav-link" href="#team">Equipa</a></li>
-          <li><a class="nav-link" href="#testemunhos">Testemunhos</a></li>
-          <li><a class="nav-link" href="#contact">Contacto</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'services'">Serviços</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'home'">Missão</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'team'">Equipa</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'testemunhos'">Testemunhos</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'contact'">Contacto</a></li>
         </ul>
       </nav> <!-- nav-desktop -->
       <!-- Mobile menu toggle -->
@@ -22,11 +22,11 @@
       <!-- Mobile navigation menu -->
       <nav class="nav-mobile" [class.open]="isMobileMenuOpen">
         <ul class="nav-list-mobile">
-          <li><a class="nav-link" href="#services" (click)="toggleMobileMenu(); scrollService.scrollToSection('services', $event)">Serviços</a></li>
-          <li><a class="nav-link" href="#home" (click)="toggleMobileMenu(); scrollService.scrollToSection('home', $event)">Missão</a></li>
-          <li><a class="nav-link" href="#team" (click)="toggleMobileMenu(); scrollService.scrollToSection('team', $event)">Equipa</a></li>
-          <li><a class="nav-link" href="#testemunhos" (click)="toggleMobileMenu(); scrollService.scrollToSection('testemunhos', $event)">Testemunhos</a></li>
-          <li><a class="nav-link" href="#contact" (click)="toggleMobileMenu(); scrollService.scrollToSection('contact', $event)">Contacto</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'services'" (click)="toggleMobileMenu()">Serviços</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'home'" (click)="toggleMobileMenu()">Missão</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'team'" (click)="toggleMobileMenu()">Equipa</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'testemunhos'" (click)="toggleMobileMenu()">Testemunhos</a></li>
+          <li><a class="nav-link" [routerLink]="['/']" [fragment]="'contact'" (click)="toggleMobileMenu()">Contacto</a></li>
         </ul>
       </nav>
     </div>
