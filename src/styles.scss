@@ -314,12 +314,6 @@ body.no-scroll .floating-cta {
   border: 0;
 }
 
-/* Focus States */
-*:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
