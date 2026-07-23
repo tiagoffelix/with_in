@@ -31,4 +31,4 @@ Install the dependencies with `npm install`, then start the development server w
 
 ## Portfolio
 
-[View portfolio case study](https://tiagoffelix.com/projects/with-in)
+[View portfolio case study](https://tiagoffelix.com/projects/within/)
