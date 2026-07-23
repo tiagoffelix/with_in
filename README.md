@@ -6,7 +6,7 @@
 
 With.in is an Angular frontend created for a Portuguese clinical psychology practice. This public repository preserves an earlier implementation and should not be treated as the final delivered client website.
 
-## Verified Features
+## Features in This Version
 
 - Responsive Angular pages and navigation
 - TypeScript and SCSS implementation
@@ -23,7 +23,7 @@ With.in is an Angular frontend created for a Portuguese clinical psychology prac
 
 ## Repository Context
 
-Later-version screenshots or features are not claimed as outputs of this public code unless they can be traced to this implementation. There is no current live-site link.
+This repository does not contain the final delivered version, and the website is no longer publicly hosted.
 
 ## Running Locally
 
